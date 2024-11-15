@@ -12,15 +12,31 @@
 
 This project aims to evaluate performance of MarketNest, a new digital marketplace platform for NexaLink.  By tracking metrics such as daily active users, installations, user sign-ups etc., NexaLink can gauge the effectiveness of its marketing campaigns measure the impact of its marketing campaigns on MarketNest App user adoption and engagement.
 
+
+
 <img width="732" alt="image" src="https://github.com/user-attachments/assets/ea7404b9-34e9-4f1a-a68a-8f1c2e194fbf">   
+
+
+
+
 
 
 <img width="735" alt="image" src="https://github.com/user-attachments/assets/ec863be7-108e-42ff-adb6-366a43ca6947">
 
 
+
+
+
 <img width="732" alt="image" src="https://github.com/user-attachments/assets/973c62ed-3475-4193-9c92-9e2e68cfe59c">
 
 
+
+
+
+
+
+
+<img width="770" alt="Product analysis 2" src="https://github.com/user-attachments/assets/5ecc28a4-63dd-48d9-bff8-0cb4ed55bec5">
 
 
 ### Data Sources
