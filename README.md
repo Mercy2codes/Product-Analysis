@@ -1,6 +1,6 @@
-# Operations Analytics
+# Product Analysis
 
-##Table of content
+### Table of content
 
 - [Project Overview](#project-overview)
 - [Data Sources](#data-sources)
@@ -10,20 +10,28 @@
 
 ### Project Overview
 
-This project aims to categorize customers based on their potential long-term value to a the company, so that the company can design personalized offers and bundled packages that resonate with each segment.
+This project aims to evaluate performance of MarketNest, a new digital marketplace platform for NexaLink.  By tracking metrics such as daily active users, installations, user sign-ups etc., NexaLink can gauge the effectiveness of its marketing campaigns measure the impact of its marketing campaigns on MarketNest App user adoption and engagement.
+
+<img width="732" alt="image" src="https://github.com/user-attachments/assets/ea7404b9-34e9-4f1a-a68a-8f1c2e194fbf">   
+
+
+<img width="735" alt="image" src="https://github.com/user-attachments/assets/ec863be7-108e-42ff-adb6-366a43ca6947">
+
+
+<img width="732" alt="image" src="https://github.com/user-attachments/assets/973c62ed-3475-4193-9c92-9e2e68cfe59c">
+
+
 
 
 ### Data Sources
 
-NexaSat_data: The primary dataset used for this analysis is the "NexaSat_data.csv", containing detailed information about each customer's purchase from the company.
+MarketNest: The primary dataset used for this analysis is the "MarketNest.xlsx", containing detailed information about the app usage events such as total app instas, user sign-ups, daiy active users, unintalls, number of app crashes, average time spent per user.
 
 ### Tools
 
 - Microsoft Excel- Data Cleaning  [Download here](https://microsoft.com)
 
-- MySQL Server - Data Analysis
-
-- Microsoft Power Bi - Data visualization and reporting
+- Microsoft Power Bi - Data cleaning, Data analysis, Data visualization and reporting
 
 ### Data Cleaning/Preparation
 
@@ -35,73 +43,78 @@ In the initial data preparation phase, the following task was performed:
 ##Exploratory Data Analysis
 
 EDA involved exploring the company's sales data to answer key questions, such as:
-- Who are our top customers
-- Which customers are most likely to continue doing business with us in 
-  high value and frequency
-- Which customers should we focus on and give tailored preferences.
+- What is our average app installs event
+- what region had the highest number of daily active users 
+- what are is the peak period of app engagement and conversion in all regions
+- what region had the highest number of app uninstalls and crashes and why?
+- What device type recorded the most number of app crashes and why?
 
 ### Data Analysis
 
-```MySQL
-use nexasat;
+Microsoft powerbi was used to analyze the data and create visuals
 
-select*, (Tenure_months*Monthly_Bill_Amount) as Total_revenue
-from nexasat_data;
-
-SELECT *,
-       (Tenure_months * Monthly_Bill_Amount) AS Total_revenue,
-       CASE
-           WHEN (Tenure_months * Monthly_Bill_Amount) <= 4000 THEN 'Low value'
-           WHEN (Tenure_months * Monthly_Bill_Amount) BETWEEN 4001 AND 15000 THEN 'Medium value'
-           WHEN (Tenure_months * Monthly_Bill_Amount) >= 15001 THEN 'High value'
-       END AS Value_Category;
-
-```
+           
 ### Insights
 
-Customer Insights:
+US Region:
+Total App Installs: 2M
+User Sign-Ups: 1.03 M, with a 65% sign-up rate
+Average Transactions: 2,280, with each user typically making 1 transaction per day
+Average App Crashes: 78, with the IOS version experiencing the highest crash rates
+Average App Uninstalls: 62, with Android leading in app installs
+-Average Time Spent per User: 96 minutes
+Daily Active Users: 4,240, with Wednesday seeing the highest user activity
 
-- Total Customers: 7043
-- Total Revenue: $27.63M
-- Customer Segmentation: Based on purchase amount and duration with the company
+Canada Region:
+Total App Installs: 1 million
+User Sign-Ups: 705K, with a 64% sign-up rate
+Average Transactions: 1,470, with each user typically making 1 transaction
+Average App Crashes: 87, with the iOS version experiencing the highest crash rates
+Average App Uninstalls: 40.9, with Android leading in app installs
+Average Time Spent per User: 102.69 minutes
+Daily Active Users: 2,830, with Thursday being the peak day
 
-High-Value Customers:
-- Count: 166 (2.3% of total customers)
-- Revenue Contribution: $2.84M (10.3% of total revenue)
-- Tech Support: 78.3% receive tech support
-- Dependents: 69% are not dependents
-- Plan Type: 100% use the postpaid plan
-- Plan Level: 78% use the premium plan
-- Gender Distribution: 53% male, with a fairly even gender distribution
+EMEA Region:
+Total App Installs: 1M
+User Sign-Ups: 665, with a 59% sign-up rate
+Average Transactions: 1,520, with each user typically making 1 transaction
+Average App Crashes: 95.9, with the iOS version experiencing the highest crash rates
+Average App Uninstalls: 41, with Android leading in app installs
+Average Time Spent per User: 95.44 minutes
+Daily Active Users: 2,890, with Monday seeing the highest user activity
 
-Medium-Value Customers:
-- Count: 2608 (37% of total customers)
-- Revenue Contribution: $18.13M (65% of total revenue)
-- Tech Support: 84.5% receive tech support
-- Dependents: 70% are dependents
-- Plan Type: 63% use the postpaid plan, 39% use the prepaid plan
-- Gender Distribution: Evenly distributed
-- Plan Level: 79% use the premium plan
+APAC Region:
+Total App Installs: 1M
+User Sign-Ups: 717.4K, with a 66% sign-up rate
+Average Transactions: 1,460, with each user typically making 1 transaction
+Average App Crashes: 96, with the iOS version experiencing the highest crash rates
+Average App Uninstalls: 42, with Android leading in app installs
+Average Time Spent per User: 96.84 minutes
+Daily Active Users: 2,690, with Wednesday being the peak day
 
-Low-Value Customers:
-- Count: 4268 (60.6% of total customers)
-- Revenue Contribution:*$6.64M (24% of total revenue)
-- Tech Support: 52% receive tech support
-- Dependents: 69% are not dependents
-- Plan Type: 53% use the postpaid plan, 47% use the prepaid plan
-- Gender Distribution: Evenly distributed
-- Plan Level: 68% use the basic plan, 32% use the premium plan
+LATAM Region:
+Total App Installs: 593K
+User Sign-Ups: 327K, with a 55% sign-up rate
+Average Transactions: 826, with each user typically making 1 transaction
+Average App Crashes: 270, with the iOS version experiencing the highest crash rates
+Average App Uninstalls: 26, with both Android and iOS versions having equal distribution in app installs
+Average Time Spent per User: 98.1 minutes
+Daily Active Users: 1,790, with Wednesday seeing the highest user activity.
+
+Trend: There has been a consistent increase in app installs and user sign-ups from June to August.
 
 ### Recommendations
 
+Enhance iOS App Stability: The iOS version has higher crash rates across all regions, particularly in LATAM. Focus on identifying and resolving these issues to improve user experience and retention.
 
-- For low value customers, Improve the tech support offered to low-value customers. Since only 52% use tech support, enhancing this service could increase loyalty and satisfaction. Consider offering more accessible support options or incentives for usage.
+Optimize Onboarding and Engagement: While sign-up rates are strong, particularly in the APAC and US regions, focus on enhancing the onboarding process and user engagement strategies to convert more installs into active users and transactions.
 
-- Also, Introduce value-added services or incentives for these customers to upgrade their plans or increase their usage. Explore targeted promotions or features that could entice them to move to higher-value plans.
+Targeted Marketing Strategies: The LATAM region has lower app installs and user sign-ups. Consider region-specific marketing campaigns to boost visibility and attract more users.
 
-- For Medium value customers, Maintain their engagement and potentially upsell them to higher plans.
- Leverage the 84.5% who receive tech support by offering advanced services or upgrades. Promote the benefits of the premium plan to those on basic  
+Retention Strategies for Android Users: Android versions have higher install rates but also significant uninstall rates. Investigate the reasons behind these uninstalls and implement strategies to enhance user retention.
 
-- For high value customers, develop exclusive offers or loyalty programs for high-value customers. Enhance the tech support and consider personalized communication and offers to retain them.
+Leverage Peak Activity Days: With peak user activity varying by region, optimize content and promotional activities on these specific days to maximize engagement and conversions.
 
-- Overall, review and possibly expand the range of plan types and features. Introduce flexible plans that can cater to different customer segments' needs, potentially increasing the conversion rate to higher-value plans.
+Continuous Monitoring and Feedback: Implement ongoing monitoring and user feedback mechanisms to quickly address issues and make necessary improvements to the platform.
+
+
